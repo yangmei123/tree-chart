@@ -1,0 +1,49 @@
+{
+  "name": "umi-project",
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "antd": "^4.22.6",
+    "autoprefixer": "^9.8.8",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "eslint": "^8.16.0",
+    "postcss": "^7.0.39",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "recoil": "^0.7.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+    "umi": "^3.5.24"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.2.17",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/fabric": "^3.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.24",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.0"
+  }
+}

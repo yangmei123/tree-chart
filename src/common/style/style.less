@@ -1,0 +1,42 @@
+.display-none {
+  display: none;
+}
+
+.company-table {
+  table {
+    border: 1px solid @greyBorder;
+  }
+  .ant-table-thead {
+    th {
+      padding: 14px 8px;
+      font-weight: normal;
+      &::before {
+        display: none;
+      }
+    }
+    th:not(:last-child) {
+      border-right: 0 !important;
+    }
+  }
+}
+
+.ant-modal {
+  .ant-modal-content {
+    border-radius: 6px;
+  }
+  .ant-modal-body {
+    padding: 50px 100px 0;
+  }
+  .ant-modal-footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px 30px;
+    border-top: none;
+  }
+  .ant-picker {
+    width: 300px;
+  }
+  .ant-radio-wrapper {
+    width: 110px;
+  }
+}

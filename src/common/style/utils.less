@@ -1,0 +1,39 @@
+.unselect-mixin() {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}
+
+.transition-mixin(@value: all 300ms ease) {
+  -webkit-transition: @value;
+  transition: @value;
+  -webkit-transtion: @value;
+}
+
+.ellipsis-mixin {
+  overflow: hidden;
+  white-space: nowrap;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+:global {
+  .fl {
+    float: left;
+  }
+  .fr {
+    float: right;
+  }
+  .zoom {
+    *zoom: 1;
+  }
+  .text-align-l {
+    text-align: left;
+  }
+  .text-align-r {
+    text-align: right;
+  }
+}

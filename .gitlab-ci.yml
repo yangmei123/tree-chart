@@ -1,0 +1,32 @@
+stages:
+  - deploy
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .npm/
+
+deploy_job:
+  stage: deploy
+  script:
+    - 'node -v'
+    - 'export PATH=/opt/node-v14.15.1-linux-x64/bin:$PATH'
+    - 'node -v'
+    - 'SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm ci --cache .npm --prefer-offline'
+    - 'npx cic run build'
+    - 'npx cic deploy'
+  only:
+    refs:
+      - /simulation|release/
+
+# deploy_hotfix:
+#   stage: deploy
+#   script:
+#     - 'SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm ci --cache .npm --prefer-offline'
+#     - 'npx cic run build'
+#     - 'npx cic deploy'
+#   only:
+#     refs:
+#       - /master/
+#   except:
+#     variables:
+#       - $CI_COMMIT_MESSAGE =~ /^(merge branch.*simulation.*)|(\[skipci\])/i
